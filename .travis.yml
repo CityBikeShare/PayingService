@@ -1,0 +1,16 @@
+sudo: required
+
+language: java
+jdk:
+  - openjdk8
+
+services:
+  - docker
+
+script:
+- mvn clean package -U
+- docker build -t citybikeshare/payingservice .
+
+after_success:
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- docker push citybikeshare/payingservice
