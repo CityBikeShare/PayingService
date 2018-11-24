@@ -24,9 +24,6 @@
 
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>entities</module>
-        <module>services</module>
-        <module>api</module>
         <module>api</module>
         <module>services</module>
         <module>entities</module>
